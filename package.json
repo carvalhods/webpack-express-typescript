@@ -7,9 +7,10 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "node node_modules/webpack/bin/webpack.js --config config/webpack.config.js",
-    "postinstall": "node node_modules/typings/dist/bin.js install --overwrite",
-    "start": "DEBUG=modern-express:* node build/bundle.js"
+    "start": "node node_modules/.bin/npm-run-all --parallel watch:server watch:build",
+    "watch:build": "node node_modules/.bin/webpack --config config/webpack.config.js --watch",
+    "watch:server": "DEBUG=modern-express:* node_modules/.bin/nodemon build/bundle.js --watch ./build",
+    "postinstall": "node node_modules/typings/dist/bin.js install --overwrite"
   },
   "main": "",
   "keywords": [
@@ -21,6 +22,8 @@
   "author": "Rick Hernandez",
   "license": "MIT",
   "devDependencies": {
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.1.1",
     "ts-loader": "^2.3.4",
     "typescript": "^2.4.2",
     "typings": "^2.1.1",
