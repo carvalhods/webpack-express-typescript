@@ -9,7 +9,7 @@
   "scripts": {
     "build": "node node_modules/webpack/bin/webpack.js --config config/webpack.config.js",
     "postinstall": "node node_modules/typings/dist/bin.js install --overwrite",
-    "start": "DEBUG=modern-express:* node build/compiled"
+    "start": "DEBUG=modern-express:* node build/bundle.js"
   },
   "main": "",
   "keywords": [
@@ -21,17 +21,17 @@
   "author": "Rick Hernandez",
   "license": "MIT",
   "devDependencies": {
-    "ts-loader": "^0.8.2",
-    "typescript": "^1.8.10",
-    "typings": "^1.3.3",
-    "webpack": "^1.13.2"
+    "ts-loader": "^2.3.4",
+    "typescript": "^2.4.2",
+    "typings": "^2.1.1",
+    "webpack": "^3.5.5"
   },
   "repository": {
     "type": "git",
     "url": ""
   },
   "dependencies": {
-    "app-root-path": "^1.3.0",
+    "app-root-path": "^2.0.1",
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.1",
